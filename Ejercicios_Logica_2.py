@@ -115,184 +115,264 @@ def tiene3digitos():
 
 # Ejercicio 5
 
-# num=6
+def EsPar():
 
-# if num % 2 == 0:
-# 	print("El numero " + str(num) + " es par")
-# else:
-# 	print("El numero " + str(num) + " es impar")
+	"""Funcion que nos devuelve si un numero es par"""
+
+	while True:
+
+		try:
+			num=int(input("Ingrese un numero: "))
+			break
+		except ValueError:
+			print("Error! \nNo ha ingresado un numero.")
+
+	if num % 2 == 0:
+		print("El numero " + str(num) + " es par")
+	else:
+		print("El numero " + str(num) + " es impar")
 
 # --------------------------------------------------
 
 # Ejercicio 6
 
-# def esprimo(num):
-# 	if num < 2:
-# 		return False
-# 	elif num == 2:
-# 		return True
-# 	else:
+def numPrimo():
 
-# 		for x in range(2,num):
-# 			if num % x == 0:
-# 				return False
-# 		return True
-# num=3
-# if esprimo(num) == True:
-# 	print("El numero " + str(num) + " es primo")
-# else:
-# 	print("El numero " + str(num) + " no es primo")	
+
+	"""Funcion que nos devuelve si un numero es primo"""
+
+	def esprimo(num):
+		if num < 2:
+			return False
+		elif num == 2:
+			return True
+		else:
+
+			for x in range(2,num):
+				if num % x == 0:
+					return False
+			return True
+
+	while True:
+
+		try:
+			num=int(input("Ingrese un numero: "))
+			break
+		except ValueError:
+			print("Error! \nNo ha ingresado un numero.")
+
+	if esprimo(num) == True:
+		print("El numero " + str(num) + " es primo")
+	else:
+		print("El numero " + str(num) + " no es primo")	
 
 # --------------------------------------------------
 
 # Ejercicio 7
 
-# num=-5
+def negYprimo(num):
 
-# def esprimo(num):
-# 	if num < 2:
-# 		return False
-# 	elif num == 2:
-# 		return True
-# 	else:
+	"""Funcion que nos devuelve si un numero es negativo o primo"""
 
-# 		for x in range(2,num):
-# 			if num % x == 0:
-# 				return False
-# 		return True
-# if num < 0:
-# 	print("El numero " + str(num) + " es negativo")
+	while True:
+		try:
+			num=int(input("Ingrese un numero: "))
+			break
+		except ValueError:
+			print("Error! \nNo ha ingresado un numero.")
 
-# if esprimo(num) == True:
-# 	print("El numero " + str(num) + " es primo")
-# else:
-# 	print("El numero " + str(num) + " no es primo")	
+	if num < 0:									
+		print("El numero " + str(num) + " es negativo")
+	else:
+		print("El numero " + str(num) + " no es negativo")
+
+	if esPrimo(num) == True:
+		print("El numero " + str(num) + " es primo")
+	else:
+		print("El numero " + str(num) + " no es primo")	
 
 # --------------------------------------------------
 
 # Ejercicio 8
 
-# num=24
+def dig2Primo():
 
-# numChar=str(num)
-# numChar1=numChar[0]
-# numChar2=numChar[1]
+	"""Funcion que nos devuelve si un digito de un numero de 2 digitos es primo o  no"""
 
-# num1=int(numChar1)
-# num2=int(numChar2)
+	while True:
 
-# def esprimo(num):
-# 	if num < 2:
-# 		return False
-# 	elif num == 2:
-# 		return True
-# 	else:
+		try:
+			num=int(input("Ingrese un numero: "))
+			break
+		except ValueError:
+			print("Error! \nNo ha ingresado un numero.")
 
-# 		for x in range(2,num):
-# 			if num % x == 0:
-# 				return False
-# 		return True
+	dig1=str(num)[0]
+	dig2=str(num)[1]
 
-# if esprimo(num1) == True:
-# 	print("El numero " + str(num1) + " es primo")
-# else:
-# 	print("El numero " + str(num1) + " no es primo")	
-# if esprimo(num2) == True:
-# 	print("El numero " + str(num2) + " es primo")
-# else:
-# 	print("El numero " + str(num2) + " no es primo")	
-
+	if esPrimo(int(dig1)):
+		print("El numero " + str(dig1) + " es primo")
+	else:
+		print("El numero " + str(dig1) + " no es primo")	
+	if esPrimo(int(dig2)):
+		print("El numero " + str(dig2) + " es primo")
+	else:
+		print("El numero " + str(dig2) + " no es primo")
 # --------------------------------------------------
 
 # Ejercicio 9
 
-# num=20
+def dig2Multiplo():
 
-# numChar=str(num)
-# numChar1=numChar[0]
-# numChar2=numChar[1]
+	"""Funcion que nos devuelve si un digito de un numero de 2 digitos es multiplo del otro o  no"""
 
-# num1=int(numChar1)
-# num2=int(numChar2)
+	while True:
 
-# try:
-# 	if num1 % num2 == 0:
-# 		print(str(num1) + " es multiplo de " + str(num2))
-# 	else:
-# 		print(str(num1) + " no es multiplo de " + str(num2))
-# except ZeroDivisionError:
-# 	print(str(num1) + " no es multiplo de " + str(num2))
+		try:
+			num=int(input("Ingrese un numero: "))
+			break
+		except ValueError:
+			print("Error! \nNo ha ingresado un numero.")
 
-# if num2 % num1 == 0:
-# 	print(str(num2) + " es multiplo de " + str(num1))
-# else:
-# 	print(str(num2) + " no es multiplo de " + str(num1))
+	dig1=str(num)[0]
+	dig2=str(num)[1]
 
-# --------------------------------------------------
+	try:
+		if esMultiplo(int(dig1), int(dig2)):
+			print(dig1 + " es multiplo de " + dig2)
+		else:
+			print(dig1 + " no es multiplo de " + dig2)
+	except ZeroDivisionError:
+		print(dig1 + " no es multiplo de " + dig2)
 
-# Ejercicio 10
-
-# num=22
-
-# numChar=str(num)
-# numChar1=numChar[0]
-# numChar2=numChar[1]
-
-# num1=int(numChar1)
-# num2=int(numChar2)
-
-# if num1 == num2:
-# 	print(str(num1) +" es igual a " + str(num2))
-# else:
-# 	print(str(num1) +" no es igual a " + str(num2))
+	if esMultiplo(int(dig2), int(dig1)):
+		print(dig2 + " es multiplo de " + dig1)
+	else:
+		print(dig2 + " no es multiplo de " + dig1)
 
 # --------------------------------------------------
 
 # Ejercicio 10
 
-# num1=9
-# num2=3
+def digDif():
 
-# if num1 == num2:
-# 	print(str(num1) + " es igual a " + str(num2))
-# elif num1 > num2:
-# 	print(str(num1) + " es mayor a " + str(num2))
-# else:
-# 	print(str(num2) + " es mayor a " + str(num1))
+	"""Funcion que nos devuelve si un digito de un numero igual al otro o no"""
+
+	while True:
+
+		try:
+			num=int(input("Ingrese un numero: "))
+			break
+		except ValueError:
+			print("Error! \nNo ha ingresado un numero.")
+
+	dig1=str(num)[0]
+	dig2=str(num)[1]
+
+
+	if int(dig1) == int(dig2):
+		print(dig1 +" es igual a " + dig2)
+	else:
+		print(dig1 +" no es igual a " + dig2)
+
+# --------------------------------------------------
+
+# Ejercicio 10
+
+
+def numMayMen():
+
+	"""Funcion que nos devuelve si un numero igual, menor o mayor otro"""
+
+	while True:
+
+		try:
+			num1=int(input("Ingrese un numero: "))
+			break
+		except ValueError:
+			print("Error! \nNo ha ingresado un numero.")
+
+	while True:
+
+		try:
+			num2=int(input("Otro un numero: "))
+			break
+		except ValueError:
+			print("Error! \nNo ha ingresado un numero.")
+
+
+	if num1 == num2:
+		print(str(num1) + " es igual a " + str(num2))
+	elif num1 > num2:
+		print(str(num1) + " es mayor a " + str(num2))
+	else:
+		print(str(num2) + " es mayor a " + str(num1))
 
 # --------------------------------------------------
 
 # Ejercicio 12
 
-# num1=22
+def num2Coinciden():
 
-# numChar=str(num1)
-# num1Char=numChar[0]
-# num2Char=numChar[1]
+	"""Funcion que nos devuelve si algun digito de 2 numeros de 2 digitos tienen alguna coincidencia"""
 
-# num2=32
+	while True:
 
-# numChar2=str(num2)
-# num3Char=numChar2[0]
-# num4Char=numChar2[1]
+		try:
+			num=int(input("Ingrese un numero: "))
+			break
+		except ValueError:
+			print("Error! \nNo ha ingresado un numero.")
 
-# if num1Char == num3Char or num1Char == num4Char or num2Char == num3Char or num2Char == num4Char:
-# 	print("El numero " + numChar + " tiene digitos comunes con " + numChar2)
-# else:
-# 	print("El numero " + numChar + " no tiene digitos comunes con el numero " + numChar2)
+	dig1=str(num)[0]
+	dig2=str(num)[1]
+
+	while True:
+
+		try:
+			num2=int(input("Ingrese un numero: "))
+			break
+		except ValueError:
+			print("Error! \nNo ha ingresado un numero.")
+
+	dig3=str(num2)[0]
+	dig4=str(num2)[1]
+
+	if dig1 == dig3 or dig1 == dig4 or dig2 == dig3 or dig2 == dig4:
+		print("El numero " + str(num) + " tiene digitos comunes con " + str(num2))
+	else:
+		print("El numero " + str(num) + " no tiene digitos comunes con el numero " + str(num2))
 
 # --------------------------------------------------
 
 # Ejercicio 13
 
-# num1=33
-# num2=38
-# res=num1+num2
-# if res % 2 == 0:
-# 	print("El numero " + str(res) + " es par")
-# else:
-# 	print("El numero " + str(res) + " es impar")
+def num2esPar():
 
+	"""Funcion que nos devuelve si el resultado de la suma de numeros es par o impar"""
+
+	while True:
+
+		try:
+			num=int(input("Ingrese un numero: "))
+			break
+		except ValueError:
+			print("Error! \nNo ha ingresado un numero.")
+
+	while True:
+
+		try:
+			num2=int(input("Ingrese un numero: "))
+			break
+		except ValueError:
+			print("Error! \nNo ha ingresado un numero.")
+
+	res=num+num2
+	if esPar(res):
+		print("El numero {} es par".format(res))
+	else:
+		print("El numero {} es impar".format(res))
+		
 # --------------------------------------------------
 
 # Ejercicio 14
