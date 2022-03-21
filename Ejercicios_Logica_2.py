@@ -68,7 +68,7 @@ def suma2digitos():
 
 	dig1=int(str(num)[0])
 	dig2=int(str(num)[1])
-	res= numChar1 + numChar2
+	res= dig1 + dig2
 	print("La suma de los 2 digitos de {} es {}".format(num,res))
 
 # --------------------------------------------------
@@ -400,7 +400,9 @@ def num2esPar():
 		except ValueError:
 			print("Error! \nNo ha ingresado un numero.")
 
-	if esPar(num+num2):
+	res=num+num2
+
+	if esPar(res):
 		print("El numero {} es par".format(res))
 	else:
 		print("El numero {} es impar".format(res))
@@ -765,123 +767,160 @@ def orden3Num():
 
 # Ejercicio 21
 
-# num1=22
+def mayor6Digitos():
 
-# numChar=str(num1)
-# num1Char=numChar[0]
-# num2Char=numChar[1]
+	"""Funcion que nos devuelve el digito mayor de 3 numeros de 2 cifras"""
 
-# num2=32
+	while True:
 
-# numChar2=str(num2)
-# num3Char=numChar2[0]
-# num4Char=numChar2[1]
+		try:
+			num1=int(input("Ingrese un numero de 2 digitos: "))
+			break
+		except ValueError:
+			print("Error! \nNo ha ingresado un numero.")
 
-# num3=89
+	while True:
+		if len(str(num1)) != 2:
+			print("Error! \nNo ha ingresado un numero.")
+			num1=int(input("Ingrese un numero de 2 digitos: "))
+		else:
+			break
 
-# numChar3=str(num3)
-# num5Char=numChar3[0]
-# num6Char=numChar3[1]
+	while True:
+
+		try:
+			num2=int(input("Ingrese un numero de 2 digitos: "))
+			break
+		except ValueError:
+			print("Error! \nNo ha ingresado un numero.")
+
+	while True:
+		if len(str(num2)) != 2:
+			print("Error! \nNo ha ingresado un numero.")
+			num2=int(input("Ingrese un numero de 2 digitos: "))
+		else:
+			break
+	while True:
+
+		try:
+			num3=int(input("Ingrese un numero de 2 digitos: "))
+			break
+		except ValueError:
+			print("Error! \nNo ha ingresado un numero.")
+
+	while True:
+		if len(str(num3)) != 2:
+			print("Error! \nNo ha ingresado un numero.")
+			num3=int(input("Ingrese un numero de 2 digitos: "))
+		else:
+			break
 
 
-# dig1=int(num1Char)
-# dig2=int(num2Char)
-# dig3=int(num3Char)
-# dig4=int(num4Char)
-# dig5=int(num5Char)
-# dig6=int(num6Char)
+	dig1=int(str(num1)[0])
+	dig2=int(str(num1)[1])
+	dig3=int(str(num2)[0])
+	dig4=int(str(num2)[1])
+	dig5=int(str(num3)[0])
+	dig6=int(str(num3)[1])
 
-# digitos=[dig1,dig2,dig3,dig4,dig5,dig6]
-# may=0
-# con=0
-# while con <= 5:
-# 	if digitos[con]==dig1:
-# 		may=digitos[con]
-# 	elif digitos[con]>may:
-# 		may=digitos[con]
-# 	elif digitos[con]>may:
-# 		may=may
-# 	con=con+1
-# print("El mayor digito es : " + str(may))
-
+	digitos=[dig1,dig2,dig3,dig4,dig5,dig6]
+	may=0
+	con=0
+	while con <= 5:
+		if digitos[con]==dig1:
+			may=digitos[con]
+		elif digitos[con]>may:
+			may=digitos[con]
+		elif digitos[con]>may:
+			may=may
+		con=con+1
+	print("El mayor digito es : {}".format(may))
 # --------------------------------------------------
 
 # Ejercicio 22
 
-# num="339"
+def digitoIgualAlUltimo():
 
-# if num[0]==num[2]:
-# 	print("El 1er digito es igual al ultimo")
-# else:
-# 	print("El 1er digito es diferente al ultimo")
+	"""Funcion que nos devuelve el 1er digito igual o no del ultimo"""
+
+	while True:
+
+		try:
+			num=int(input("Ingrese un numero: "))
+			break
+		except ValueError:
+			print("Error! \nNo ha ingresado un numero.")
+
+	if str(num)[0]==str(num)[-1]:
+		print("El 1er digito es igual al ultimo")
+	else:
+		print("El 1er digito es diferente al ultimo")
 
 # --------------------------------------------------
 
 # Ejercicio 23
 
-# num=267
+def primosEn3Dgitos():
 
-# numChar=str(num)
-# numChar1=numChar[0]
-# numChar2=numChar[1]
-# numChar3=numChar[2]
+	"""Funcion que nos devuelvela cantidad de digitos primos que tiene un numero de 3 cifras"""
 
-# num1=int(numChar1)
-# num2=int(numChar2)
-# num3=int(numChar3)
+	while True:
 
-# def esprimo(num):
-# 	if num < 2:
-# 		return False
-# 	elif num == 2:
-# 		return True
-# 	else:
+		try:
+			num=int(input("Ingrese un numero de 3 digitos: "))
+			break
+		except ValueError:
+			print("Error! \nNo ha ingresado un numero.")
 
-# 		for x in range(2,num):
-# 			if num % x == 0:
-# 				return False
-# 		return True
-# cont=0
-# if esprimo(num1) == True:
-# 	cont=cont+1
-# if esprimo(num2) == True:
-# 	cont=cont+1
-# if esprimo(num3) == True:
-# 	cont=cont+1
-# print("El numero tiene " + str(cont) + " digito/s primo/s")
+	while True:
+		if len(str(num)) != 3:
+			print("Error! \nNo ha ingresado un de 3 numero de 3 digitos.")
+			num=int(input("Ingrese un numero de 3 digitos: "))
+		else:
+			break
+
+
+	dig1=int(str(num)[0])
+	dig2=int(str(num)[1])
+	dig3=int(str(num)[2])
+
+
+	cont=0
+	if esPrimo(dig1):
+		cont=cont+1
+	if esPrimo(dig2):
+		cont=cont+1
+	if esPrimo(dig3):
+		cont=cont+1
+	print("El numero tiene {} digito/s primo/s".format(cont))
 
 # --------------------------------------------------
 
 # Ejercicio 24
 
-# num=201
+"""Funcion que nos devuelve si un numero devuelve cuantos digitos pares tiene un numero de 3 cifras """
 
-# numChar=str(num)
-# numChar1=numChar[0]
-# numChar2=numChar[1]
-# numChar3=numChar[2]
+def paresEn3Cifras():
 
-# num1=int(numChar1)
-# num2=int(numChar2)
-# num3=int(numChar3)
-
-# def espar(num):
-# 	if num % 2 == 0:
-# 		return True
-# 	else:
-# 		return False
-# cont=0
-# if espar(num1) == True:
-# 	cont = cont+1
-
-# if espar(num2) == True:
-# 	cont = cont+1
-
-# if espar(num3) == True:
-# 	cont = cont+1
-# print("El numero tiene " + str(cont) + " digitos pares")
+	num=201
 
 
+	dig1=int(str(num)[0])
+	dig2=int(str(num)[1])
+	dig3=int(str(num)[2])
+	cont=0
+
+	if esPar(dig1) == True:
+		cont = cont+1
+
+	if esPar(dig2) == True:
+		cont = cont+1
+
+	if esPar(dig3) == True:
+		cont = cont+1
+	print("El numero tiene " + str(cont) + " digitos pares")
+
+paresEn3Cifras()
 # --------------------------------------------------
 
 # Ejercicio 25
